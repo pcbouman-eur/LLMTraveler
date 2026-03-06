@@ -38,12 +38,7 @@ def get_config(net='ow'):
                             help="Initial travel time for unknown routes")
     parser.add_argument('--action_strategy', type=str, choices=["llm", "ucb", "epsilon_greedy", "greedy"],
                         default='llm', help="Route selection strategy")
-    parser.add_argument('--llm_model', type=str,
-                        choices=["azure_gpt35", "azure_gpt4o", "azure_gpt4omini", "openai_gpt35", "yi-large", "yi-medium", "glm4-air",
-                                 "moonshot-v1-8k", "claude-3-5-sonnet-20240620", 'qwen-long', 'qwen-turbo',
-                                 'llama-3-70b-instruct', 'llama-3-8b-instruct', 'gemma-2-9b-it', 'llama-3.1-70b-instruct',
-                                 'llama-3.1-8b-instruct', 'openrouter_gpt35'],
-                        default='azure_gpt35', help="Large language model base")
+    parser.add_argument('--llm_model', type=str, default='gpt-oss:20b', help="Ollama model to use")
     if net == 'siouxfalls':
         parser.add_argument('--temperature', type=float, default=0.5,
                             help="Temperature (hyper-parameter) of llm model, which regulates the amount of randomness, \
