@@ -1,4 +1,3 @@
-from openai import AzureOpenAI, OpenAI
 from langchain_ollama import ChatOllama
 import pandas as pd
 import json
