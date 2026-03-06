@@ -20,8 +20,8 @@ class LLM_Client:
         self.total_prompt_tokens_usage = 0
 
         # Initialize Ollama client
-        base_url = os.getenv("OLLAMA_BASE_URL")
-        api_key = os.getenv("OLLAMA_API_KEY")
+        base_url = os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434")
+        api_key = os.getenv("OLLAMA_API_KEY", None)
 
         # Create ChatOllama with proper headers for API key authentication
         client_kwargs = {}
